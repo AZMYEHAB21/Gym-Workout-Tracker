@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Tracker - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <button class="menu-btn" id="menuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="logo">GymTrack</h1>
+            </div>
+            <button class="add-btn" onclick="navigateTo('add.html')">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="menu-nav">
+            <a href="index.html" class="menu-link active">
+                <i class="fas fa-home"></i> Dashboard
+            </a>
+            <a href="workouts.html" class="menu-link">
+                <i class="fas fa-dumbbell"></i> Workouts
+            </a>
+            <a href="add.html" class="menu-link">
+                <i class="fas fa-plus-circle"></i> Add Workout
+            </a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <h2>Welcome Back</h2>
+                <p>Track your progress and stay consistent</p>
+            </section>
+
+            <!-- Stats Cards -->
+            <section class="stats-section">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="stat-content">
+                        <p class="stat-label">Total Workouts</p>
+                        <h3 class="stat-value" id="totalWorkouts">0</h3>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <div class="stat-content">
+                        <p class="stat-label">Last Workout</p>
+                        <h3 class="stat-value" id="lastWorkout">—</h3>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <div class="stat-content">
+                        <p class="stat-label">Heaviest Lift</p>
+                        <h3 class="stat-value" id="heaviestLift">—</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Workouts -->
+            <section class="recent-section">
+                <div class="section-header">
+                    <h3>Recent Workouts</h3>
+                    <a href="workouts.html" class="view-all">View All →</a>
+                </div>
+                <div id="recentWorkouts" class="workouts-list">
+                    <!-- Recent workouts will be added here -->
+                </div>
+                <div id="emptyState" class="empty-state">
+                    <i class="fas fa-inbox"></i>
+                    <p>No workouts yet</p>
+                    <button class="btn btn-primary" onclick="navigateTo('add.html')">
+                        Add Your First Workout
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 AZMY EHAB - Gym Tracker</p>
+        <div class="social-links">
+            <a href="https://t.snapchat.com/TVFCi2Fm" target="_blank" title="Snapchat">
+                <i class="fab fa-snapchat"></i>
+            </a>
+            <a href="https://x.com/AZMYEHAB21" target="_blank" title="Twitter">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100083276749464&mibextid=ZbWKwL" target="_blank" title="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://instagram.com/azmy_ehab_?igshid=MzRlODBiNWFlZA==" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

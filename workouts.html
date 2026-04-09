@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workouts - Gym Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <button class="menu-btn" id="menuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="logo">Workouts</h1>
+            </div>
+            <button class="add-btn" onclick="navigateTo('add.html')">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="menu-nav">
+            <a href="index.html" class="menu-link">
+                <i class="fas fa-home"></i> Dashboard
+            </a>
+            <a href="workouts.html" class="menu-link active">
+                <i class="fas fa-dumbbell"></i> Workouts
+            </a>
+            <a href="add.html" class="menu-link">
+                <i class="fas fa-plus-circle"></i> Add Workout
+            </a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Filters Section -->
+            <section class="filters-section" style="margin-bottom: var(--spacing-2xl);">
+                <div style="flex: 1; display: flex; gap: var(--spacing-md);">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        class="form-input" 
+                        placeholder="Search exercises..."
+                        style="flex: 1;"
+                    >
+                    <input 
+                        type="date" 
+                        id="dateFilter" 
+                        class="form-input"
+                        style="flex: 0.8;"
+                    >
+                </div>
+                <button class="btn btn-secondary btn-sm" id="clearFiltersBtn" onclick="clearFilters()">
+                    <i class="fas fa-times"></i> Clear
+                </button>
+            </section>
+
+            <!-- Workouts List -->
+            <section class="workouts-section">
+                <div id="workoutsList" class="workouts-list">
+                    <!-- Workouts will be added here -->
+                </div>
+                <div id="noResults" class="empty-state" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <p>No workouts found</p>
+                    <button class="btn btn-primary" onclick="navigateTo('add.html')">
+                        Add a Workout
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 AZMY EHAB - Gym Tracker</p>
+        <div class="social-links">
+            <a href="https://t.snapchat.com/TVFCi2Fm" target="_blank" title="Snapchat">
+                <i class="fab fa-snapchat"></i>
+            </a>
+            <a href="https://x.com/AZMYEHAB21" target="_blank" title="Twitter">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100083276749464&mibextid=ZbWKwL" target="_blank" title="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://instagram.com/azmy_ehab_?igshid=MzRlODBiNWFlZA==" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-content">
+            <h3>Delete Workout?</h3>
+            <p>Are you sure you want to delete this workout? This action cannot be undone.</p>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+                <button class="btn btn-danger" onclick="confirmDelete()">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

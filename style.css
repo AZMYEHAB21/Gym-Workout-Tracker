@@ -858,3 +858,14 @@ a:hover {
 .mb-1 { margin-bottom: var(--spacing-sm); }
 .mb-2 { margin-bottom: var(--spacing-md); }
 .mb-3 { margin-bottom: var(--spacing-lg); }
+a svg {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+  transition: 0.3s;
+}
+
+a:hover svg {
+  transform: scale(1.2);
+  fill: #00ffcc;
+}

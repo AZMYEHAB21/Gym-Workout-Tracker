@@ -116,7 +116,17 @@ function closeModal() {
 
 function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
-    if (menu) menu.classList.toggle('active');
+    if (menu) {
+        // إضافة أو حذف الكلاس اللي بيفتح المنيو
+        menu.classList.toggle('active');
+        
+        // منع الصفحة من السكرول لما المنيو تفتح (اختياري بس بيخلي الشكل أنضف)
+        if (menu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }
 }
 
 function setupMenuLinks() {
